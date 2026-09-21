@@ -1,0 +1,8 @@
+{
+  "name": "eko PHTGRPHY",
+  "description": "Photographing the people and places that make a city feel alive.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

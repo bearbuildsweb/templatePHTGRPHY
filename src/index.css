@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Parisienne&family=Great+Vibes&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@100;200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Tan Pearl';
+  src: local('Tan Pearl'), local('TanPearl'), url('https://fonts.cdnfonts.com/s/72832/TanPearl-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: local('Glacial Indifference'), local('GlacialIndifference-Regular'), url('https://fonts.cdnfonts.com/s/17228/GlacialIndifference-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Glacial Indifference", "Montserrat", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Tan Pearl", "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-display: "Tan Pearl", "Playfair Display", serif;
+  --font-heading: "Tan Pearl", serif;
+  --font-body: "Glacial Indifference", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-cursive: "Allura", "Alex Brush", "Parisienne", "Pinyon Script", cursive;
+  
+  --color-brand-bg: #1B263B;
+  --color-brand-secondary: #B3A298;
+  --color-brand-accent: #C5A059;
+  --color-brand-orange: #C5A059;
+  --color-orange-primary: #C5A059;
+
+  --color-warm-50: #FAF8F5;
+  --color-warm-100: #EBE5DF;
+  --color-warm-200: #B3A298;
+  --color-warm-300: #8C7B71;
+  --color-warm-400: #4B5563;
+  --color-warm-500: #C5A059;
+  --color-warm-900: #1B263B;
+  --color-warm-950: #111927;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #1B263B;
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    background-color: #1B263B;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  /* Custom minimal premium scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111927;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C5A059;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DFBA70;
+  }
+
+  ::selection {
+    background-color: #C5A059;
+    color: #1B263B;
+  }
+}
+
+.font-cursive {
+  font-family: 'Pinyon Script', 'Alex Brush', 'Great Vibes', cursive;
+}
+
+
