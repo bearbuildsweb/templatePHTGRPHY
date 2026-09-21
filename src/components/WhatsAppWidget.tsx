@@ -21,17 +21,24 @@ interface WhatsAppWidgetProps {
 export default function WhatsAppWidget({ isHidden = false }: WhatsAppWidgetProps) {
   const [mounted, setMounted] = useState(false);
   const [inFunnelOrBelow, setInFunnelOrBelow] = useState(false);
+  const [inHeroOnMobile, setInHeroOnMobile] = useState(true);
 
   useEffect(() => {
     setMounted(true);
 
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const isMobile = window.innerWidth < 640;
 
-      // When near the top (hero), never treat as inside the funnel
-      if (scrollY < 300) {
-        setInFunnelOrBelow(false);
-        return;
+      // Check if user is viewing the hero section on mobile
+      const heroEl = document.getElementById('hero');
+      if (heroEl) {
+        const rect = heroEl.getBoundingClientRect();
+        // While the hero section bottom is still prominently in view
+        const inHero = rect.bottom > 120;
+        setInHeroOnMobile(isMobile && inHero);
+      } else {
+        setInHeroOnMobile(isMobile && scrollY < 400);
       }
 
       // Hide starting from the funnels section (#booking) onwards all the way to the end of the footer
@@ -41,6 +48,8 @@ export default function WhatsAppWidget({ isHidden = false }: WhatsAppWidgetProps
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 800;
         // As soon as the funnels section approaches or enters the viewport window, hide the floating widget
         setInFunnelOrBelow(rect.top <= viewportHeight - 60);
+      } else {
+        setInFunnelOrBelow(false);
       }
     };
 
@@ -53,7 +62,7 @@ export default function WhatsAppWidget({ isHidden = false }: WhatsAppWidgetProps
     };
   }, []);
 
-  const shouldHide = inFunnelOrBelow || isHidden;
+  const shouldHide = inFunnelOrBelow || isHidden || inHeroOnMobile;
 
   const widgetMarkup = (
     <aside
@@ -71,7 +80,7 @@ export default function WhatsAppWidget({ isHidden = false }: WhatsAppWidgetProps
         rel="noopener noreferrer"
         id="floating-whatsapp-trigger"
         aria-label="Let's talk on WhatsApp with eko PHTGRPHY"
-        className="group relative flex items-center gap-2.5 lg:gap-3 bg-[#1B263B] text-[#C5A059] hover:text-white border border-[#C5A059]/40 hover:border-[#C5A059] px-3.5 py-2.5 lg:px-4 lg:py-3 shadow-[0_12px_36px_rgba(27,38,59,0.4),0_0_20px_rgba(197,160,89,0.2)] hover:shadow-[0_16px_44px_rgba(27,38,59,0.6),0_0_28px_rgba(197,160,89,0.35)] backdrop-blur-xl transition-all duration-300 active:scale-[0.97]"
+        className="group relative flex items-center gap-2.5 lg:gap-3 bg-[#111929] text-[#C5A059] hover:text-white border border-[#C5A059]/40 hover:border-[#C5A059] px-3.5 py-2.5 lg:px-4 lg:py-3 shadow-[0_12px_36px_rgba(17,25,41,0.4),0_0_20px_rgba(197,160,89,0.2)] hover:shadow-[0_16px_44px_rgba(17,25,41,0.6),0_0_28px_rgba(197,160,89,0.35)] backdrop-blur-xl transition-all duration-300 active:scale-[0.97]"
       >
         {/* Subtle Live Status Indicator */}
         <span className="relative flex h-2 w-2">

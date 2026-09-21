@@ -22,7 +22,7 @@
   --font-mono: "JetBrains Mono", monospace;
   --font-cursive: "Allura", "Alex Brush", "Parisienne", "Pinyon Script", cursive;
   
-  --color-brand-bg: #1B263B;
+  --color-brand-bg: #111929;
   --color-brand-secondary: #B3A298;
   --color-brand-accent: #C5A059;
   --color-brand-orange: #C5A059;
@@ -34,20 +34,20 @@
   --color-warm-300: #8C7B71;
   --color-warm-400: #4B5563;
   --color-warm-500: #C5A059;
-  --color-warm-900: #1B263B;
-  --color-warm-950: #111927;
+  --color-warm-900: #111929;
+  --color-warm-950: #0B101B;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #1B263B;
+    background-color: #111929;
     color: #FFFFFF;
     font-family: var(--font-sans);
   }
   
   body {
-    background-color: #1B263B;
+    background-color: #111929;
     color: #FFFFFF;
     overflow-x: hidden;
   }
@@ -58,7 +58,7 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #111927;
+    background: #0B101B;
   }
   ::-webkit-scrollbar-thumb {
     background: #C5A059;
@@ -70,7 +70,7 @@
 
   ::selection {
     background-color: #C5A059;
-    color: #1B263B;
+    color: #111929;
   }
 }
 

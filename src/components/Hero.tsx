@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Instagram } from 'lucide-react';
 import Logo from './Logo';
+import HeroContactSheet from './HeroContactSheet';
 
 import heroImage01 from '../assets/images/hero_image_01.jpg';
 import heroImage02 from '../assets/images/hero_image_02.jpg';
@@ -52,7 +53,10 @@ export default function Hero({
   };
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between bg-[#1B263B] text-white overflow-hidden z-10">
+    <section 
+      id="hero" 
+      className="relative min-h-screen w-full flex flex-col justify-between bg-[#111929] text-white overflow-hidden z-10"
+    >
       
       {/* 1. Hero Background: More faded (lighter) atmospheric treatment */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -74,11 +78,11 @@ export default function Hero({
         <div className="absolute inset-0 bg-[#B3A298]/25 mix-blend-screen z-10" />
         <div className="absolute inset-0 bg-white/[0.06] z-10" />
         {/* Soft, lightened atmospheric gradient maintaining contrast for header & CTA */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1B263B]/50 via-transparent to-[#1B263B]/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#111929]/50 via-transparent to-[#111929]/60 z-10" />
       </div>
 
       {/* 2. Sleek Top Navigation Header */}
-      <header className="relative w-full z-40 px-4 sm:px-6 py-3.5 sm:py-4 md:px-12 flex justify-between items-center border-b border-[#C5A059]/20 bg-[#1B263B]/80 backdrop-blur-md">
+      <header className="relative w-full z-40 px-4 sm:px-6 py-3.5 sm:py-4 md:px-12 flex justify-between items-center border-b border-[#C5A059]/20 bg-[#111929]/80 backdrop-blur-md">
         {/* Brand Lockup */}
         <div 
           className="flex items-center gap-3 sm:gap-4 md:gap-5 cursor-pointer group py-1" 
@@ -103,18 +107,18 @@ export default function Hero({
           </div>
         </div>
 
-        {/* Recessed Pill Depression / Cavity ("Hole in the wall" depth effect) with Hamburger Icon */}
-        <div className="p-[3px] rounded-full bg-[#121927] shadow-[0_4px_14px_rgba(0,0,0,0.5),inset_0_3px_8px_rgba(0,0,0,0.7),inset_0_-1px_1px_rgba(255,255,255,0.1)] border-t border-[#C5A059]/30 border-b border-black/80">
+        {/* Precision Square Nav Chassis / Well-Fitted Architectural Housing */}
+        <div className="p-[2px] bg-[#0A101A] border border-[#C5A059]/30 shadow-[inset_0_2px_4px_rgba(0,0,0,0.85),0_2px_6px_rgba(0,0,0,0.35)]">
           <button
             id="header-nav-toggle"
             aria-label="Toggle navigation menu"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="group relative inline-flex items-center justify-center px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-full bg-[#1B263B] hover:bg-[#253552] shadow-[inset_0_4px_10px_rgba(0,0,0,0.6),inset_0_1px_2px_rgba(0,0,0,0.8),inset_0_-1px_1px_rgba(255,255,255,0.12)] border-t border-black/60 border-b border-white/10 transition-all duration-300 active:scale-[0.96] cursor-pointer"
+            className="group relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-b from-[#1B273D]/90 via-[#111929]/95 to-[#0A101C] hover:from-[#22314C] hover:via-[#162134] hover:to-[#0E1624] border border-[#C5A059]/40 hover:border-[#C5A059] shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.18),inset_0_-2px_3px_rgba(0,0,0,0.7),0_0_12px_rgba(197,160,89,0.1)] hover:shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.25),0_0_18px_rgba(197,160,89,0.3)] backdrop-blur-md transition-all duration-200 active:translate-y-[1px] active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.85)] cursor-pointer"
           >
             <div className="flex flex-col gap-1 sm:gap-1.5 justify-center items-center w-5 h-3.5 sm:h-4">
-              <span className={`h-[2px] bg-[#C5A059] group-hover:bg-white transition-all duration-300 rounded-full ${menuOpen ? 'w-5 rotate-45 translate-y-[5.5px]' : 'w-5'}`} />
-              <span className={`h-[2px] bg-[#C5A059] group-hover:bg-white transition-all duration-300 rounded-full ${menuOpen ? 'w-0 opacity-0' : 'w-4'}`} />
-              <span className={`h-[2px] bg-[#C5A059] group-hover:bg-white transition-all duration-300 rounded-full ${menuOpen ? 'w-5 -rotate-45 -translate-y-[5.5px]' : 'w-5'}`} />
+              <span className={`h-[2px] bg-[#C5A059] group-hover:bg-white transition-all duration-300 ${menuOpen ? 'w-5 rotate-45 translate-y-[5.5px]' : 'w-5'}`} />
+              <span className={`h-[2px] bg-[#C5A059] group-hover:bg-white transition-all duration-300 ${menuOpen ? 'w-0 opacity-0' : 'w-4'}`} />
+              <span className={`h-[2px] bg-[#C5A059] group-hover:bg-white transition-all duration-300 ${menuOpen ? 'w-5 -rotate-45 -translate-y-[5.5px]' : 'w-5'}`} />
             </div>
           </button>
         </div>
@@ -139,7 +143,7 @@ export default function Hero({
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 240 }}
-              className="fixed inset-y-0 right-0 w-full sm:w-[380px] bg-[#1B263B] border-l border-[#C5A059]/30 z-50 p-8 flex flex-col justify-between backdrop-blur-2xl text-white shadow-2xl"
+              className="fixed inset-y-0 right-0 w-full sm:w-[380px] bg-[#111929] border-l border-[#C5A059]/30 z-50 p-8 flex flex-col justify-between backdrop-blur-2xl text-white shadow-2xl"
             >
             {/* Drawer Top Header: Logo & [ CLOSE ] */}
             <div className="flex justify-between items-center w-full border-b border-[#C5A059]/20 pb-6">
@@ -231,8 +235,8 @@ export default function Hero({
           </div>
 
           {/* Crisp White Museum Matting Frame */}
-          <div className="w-[290px] h-[360px] sm:w-[350px] sm:h-[440px] md:w-[410px] md:h-[510px] lg:w-[450px] lg:h-[560px] max-h-[64vh] bg-white p-2.5 sm:p-3.5 border-4 border-white shadow-[0_25px_80px_rgba(27,38,59,0.35)] relative overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.015]">
-            <div className="relative w-full h-full overflow-hidden bg-[#1B263B]">
+          <div className="w-[290px] h-[360px] sm:w-[350px] sm:h-[440px] md:w-[410px] md:h-[510px] lg:w-[450px] lg:h-[560px] max-h-[64vh] bg-white p-2.5 sm:p-3.5 border-4 border-white shadow-[0_25px_80px_rgba(17,25,41,0.35)] relative overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.015]">
+            <div className="relative w-full h-full overflow-hidden bg-[#111929]">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentSlide}
@@ -246,6 +250,9 @@ export default function Hero({
                   transition={{ duration: 0.9 }}
                 />
               </AnimatePresence>
+
+              {/* The Contact Sheet: Progressive Darkroom Tile Pre-loader */}
+              <HeroContactSheet key={currentSlide} slideIndex={currentSlide} />
             </div>
           </div>
         </div>
@@ -256,7 +263,7 @@ export default function Hero({
             href="#portfolio"
             id="hero-view-portfolio-cta"
             aria-label="View portfolio of works"
-            className="group relative inline-flex items-center gap-2.5 px-7 py-3 sm:px-8 sm:py-3.5 rounded-full bg-[#1B263B] hover:bg-[#253552] shadow-[inset_0_5px_12px_rgba(0,0,0,0.6),inset_0_1px_3px_rgba(0,0,0,0.8),inset_0_-1px_2px_rgba(255,255,255,0.12)] border-t border-black/80 border-b border-white/10 transition-all duration-300 active:scale-[0.98]"
+            className="group relative inline-flex items-center gap-2.5 px-7 py-3 sm:px-8 sm:py-3.5 rounded-full bg-[#111929] hover:bg-[#1A253C] shadow-[inset_0_5px_12px_rgba(0,0,0,0.6),inset_0_1px_3px_rgba(0,0,0,0.8),inset_0_-1px_2px_rgba(255,255,255,0.12)] border-t border-black/80 border-b border-white/10 transition-all duration-300 active:scale-[0.98]"
           >
             <div className="relative flex flex-col">
               <span className="font-sans text-[11px] sm:text-xs uppercase tracking-[0.24em] font-bold text-[#C5A059] group-hover:text-white transition-colors pb-0.5">
@@ -281,6 +288,22 @@ export default function Hero({
           </a>
         </div>
 
+      </div>
+
+      {/* 5. Mobile-Only Round WhatsApp Icon on Left-Hand Side */}
+      <div className="absolute bottom-5 left-4 sm:hidden z-30">
+        <div className="p-[3px] rounded-full bg-[#121927] shadow-[0_4px_14px_rgba(0,0,0,0.5),inset_0_3px_8px_rgba(0,0,0,0.7),inset_0_-1px_1px_rgba(255,255,255,0.1)] border-t border-[#C5A059]/30 border-b border-black/80">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp with eko PHTGRPHY"
+            id="hero-mobile-whatsapp-btn"
+            className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[#111929] hover:bg-[#1A253C] text-[#C5A059] hover:text-white border-t border-white/15 border-b border-black/60 shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)] active:scale-95 transition-all duration-300"
+          >
+            <WhatsAppIcon className="w-5 h-5 fill-current text-[#C5A059] group-hover:text-white transition-colors" />
+          </a>
+        </div>
       </div>
 
     </section>

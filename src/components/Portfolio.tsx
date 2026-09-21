@@ -49,7 +49,7 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      className="relative w-full bg-[#1B263B] text-white py-24 sm:py-32 md:py-44 px-6 sm:px-10 md:px-16 z-10 border-t border-[#C5A059]/20 overflow-hidden"
+      className="relative w-full bg-[#111929] text-white py-24 sm:py-32 md:py-44 px-6 sm:px-10 md:px-16 z-10 border-t border-[#C5A059]/20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto space-y-28 sm:space-y-36 md:space-y-48">
         
@@ -95,10 +95,7 @@ export default function Portfolio() {
                   />
 
                   {/* Top Meta Line: Index */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-[#C5A059] font-bold">
-                      EXHIBIT DOSSIER
-                    </span>
+                  <div className="flex items-center justify-end mb-4">
                     <span className="text-[#C5A059]/80 text-xs font-mono font-bold select-none">
                       01 / 05
                     </span>
@@ -134,8 +131,8 @@ export default function Portfolio() {
                   <div className="absolute -bottom-2.5 -right-2.5 w-4 h-4 border-b-2 border-r-2 border-[#C5A059] z-30 pointer-events-none transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
 
                   {/* Museum Matting Frame with Direct-Flash Contrast Image */}
-                  <div className="relative w-full aspect-[16/10] bg-white p-2.5 sm:p-3.5 border-4 border-white shadow-[0_20px_50px_rgba(27,38,59,0.25)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                    <div className="relative w-full h-full overflow-hidden bg-[#1B263B]">
+                  <div className="relative w-full aspect-[16/10] bg-white p-2.5 sm:p-3.5 border-4 border-white shadow-[0_20px_50px_rgba(17,25,41,0.25)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                    <div className="relative w-full h-full overflow-hidden bg-[#111929]">
                       <motion.img 
                         src={p1.image} 
                         alt={p1.title} 
@@ -172,8 +169,8 @@ export default function Portfolio() {
                 <div className="absolute -top-2 -left-2 w-3.5 h-3.5 border-t-2 border-l-2 border-[#C5A059] z-20 pointer-events-none" />
                 <div className="absolute -bottom-2 -right-2 w-3.5 h-3.5 border-b-2 border-r-2 border-[#C5A059] z-20 pointer-events-none" />
 
-                <div className="relative w-full aspect-[4/5] bg-white p-2.5 sm:p-3 border-4 border-white shadow-[0_20px_50px_rgba(27,38,59,0.2)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                  <div className="relative w-full h-full overflow-hidden bg-[#1B263B]">
+                <div className="relative w-full aspect-[4/5] bg-white p-2.5 sm:p-3 border-4 border-white shadow-[0_20px_50px_rgba(17,25,41,0.2)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                  <div className="relative w-full h-full overflow-hidden bg-[#111929]">
                     <motion.img 
                       src={p2.image} 
                       alt={p2.title} 
@@ -198,10 +195,7 @@ export default function Portfolio() {
                   aria-hidden="true"
                 />
 
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#C5A059] font-bold">
-                    EXHIBIT DOSSIER
-                  </span>
+                <div className="flex items-center justify-end mb-3">
                   <span className="text-[#C5A059]/80 text-xs font-mono font-bold select-none">
                     02 / 05
                   </span>
@@ -234,8 +228,8 @@ export default function Portfolio() {
                 <div className="absolute -top-2 -right-2 w-3.5 h-3.5 border-t-2 border-r-2 border-[#C5A059] z-20 pointer-events-none" />
                 <div className="absolute -bottom-2 -left-2 w-3.5 h-3.5 border-b-2 border-l-2 border-[#C5A059] z-20 pointer-events-none" />
 
-                <div className="relative w-full aspect-[16/10] bg-white p-2.5 sm:p-3.5 border-4 border-white shadow-[0_20px_50px_rgba(27,38,59,0.2)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                  <div className="relative w-full h-full overflow-hidden bg-[#1B263B]">
+                <div className="relative w-full aspect-[16/10] bg-white p-2.5 sm:p-3.5 border-4 border-white shadow-[0_20px_50px_rgba(17,25,41,0.2)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                  <div className="relative w-full h-full overflow-hidden bg-[#111929]">
                     <motion.img 
                       src={p3.image} 
                       alt={p3.title} 
@@ -260,10 +254,7 @@ export default function Portfolio() {
                   aria-hidden="true"
                 />
 
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#C5A059] font-bold">
-                    EXHIBIT DOSSIER
-                  </span>
+                <div className="flex items-center justify-end mb-3">
                   <span className="text-[#C5A059]/80 text-xs font-mono font-bold select-none">
                     03 / 05
                   </span>
@@ -309,10 +300,7 @@ export default function Portfolio() {
                   aria-hidden="true"
                 />
 
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-[#C5A059] font-bold">
-                    EXHIBIT DOSSIER
-                  </span>
+                <div className="flex items-center justify-end mb-4">
                   <span className="text-[#C5A059]/80 text-xs font-mono font-bold select-none">
                     04 / 05
                   </span>
@@ -342,8 +330,8 @@ export default function Portfolio() {
                 <div className="absolute -top-2 -right-2 w-3.5 h-3.5 border-t-2 border-r-2 border-[#C5A059] z-20 pointer-events-none" />
                 <div className="absolute -bottom-2 -left-2 w-3.5 h-3.5 border-b-2 border-l-2 border-[#C5A059] z-20 pointer-events-none" />
 
-                <div className="relative w-full aspect-[4/3] bg-white p-2.5 sm:p-3.5 border-4 border-white shadow-[0_20px_50px_rgba(27,38,59,0.2)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                  <div className="relative w-full h-full overflow-hidden bg-[#1B263B]">
+                <div className="relative w-full aspect-[4/3] bg-white p-2.5 sm:p-3.5 border-4 border-white shadow-[0_20px_50px_rgba(17,25,41,0.2)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                  <div className="relative w-full h-full overflow-hidden bg-[#111929]">
                     <motion.img 
                       src={p4.image} 
                       alt={p4.title} 
@@ -378,8 +366,8 @@ export default function Portfolio() {
               <div className="absolute -bottom-2.5 -left-2.5 w-4 h-4 border-b-2 border-l-2 border-[#C5A059] z-20 pointer-events-none" />
               <div className="absolute -bottom-2.5 -right-2.5 w-4 h-4 border-b-2 border-r-2 border-[#C5A059] z-20 pointer-events-none" />
 
-              <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-white p-2.5 sm:p-4 border-4 border-white shadow-[0_25px_60px_rgba(27,38,59,0.25)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                <div className="relative w-full h-full overflow-hidden bg-[#1B263B]">
+              <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-white p-2.5 sm:p-4 border-4 border-white shadow-[0_25px_60px_rgba(17,25,41,0.25)] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                <div className="relative w-full h-full overflow-hidden bg-[#111929]">
                   <motion.img 
                     src={p5.image} 
                     alt={p5.title} 
@@ -433,7 +421,7 @@ export default function Portfolio() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 bg-[#1B263B]/98 backdrop-blur-md flex flex-col justify-between p-4 sm:p-8 md:p-10 select-none text-white"
+            className="fixed inset-0 z-50 bg-[#111929]/98 backdrop-blur-md flex flex-col justify-between p-4 sm:p-8 md:p-10 select-none text-white"
             onClick={() => setActiveProjectIndex(null)}
           >
             {/* Top Bar: Title, Index & Close */}

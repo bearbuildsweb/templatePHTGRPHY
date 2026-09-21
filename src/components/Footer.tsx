@@ -13,7 +13,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full bg-[#1B263B] text-[#B3A298] py-16 md:py-24 px-6 md:px-12 z-10 border-t border-[#C5A059]/20">
+    <footer className="relative w-full bg-[#111929] text-[#B3A298] py-16 md:py-24 px-6 md:px-12 z-10 border-t border-[#C5A059]/20">
       <div className="max-w-7xl mx-auto flex flex-col justify-between">
         
         {/* Editorial Official Logo Centerpiece Header */}
@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Center Dimensional Ring Logo & Brand Typography */}
           <div className="flex-1 flex flex-col items-center justify-center py-4 text-center group cursor-pointer">
-            <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border-2 border-[#C5A059] border-t-[#DFBA70] border-b-[#9E7D36] bg-[#111927] p-3 sm:p-4 flex items-center justify-center shadow-[0_6px_22px_rgba(197,160,89,0.35),inset_0_1.5px_3px_rgba(255,255,255,0.35),inset_0_-3px_6px_rgba(0,0,0,0.85)] group-hover:scale-105 group-hover:shadow-[0_8px_30px_rgba(197,160,89,0.5),inset_0_1.5px_3px_rgba(255,255,255,0.4),inset_0_-3px_6px_rgba(0,0,0,0.85)] transition-all duration-500">
+            <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border-2 border-[#C5A059] border-t-[#DFBA70] border-b-[#9E7D36] bg-[#111929] p-3 sm:p-4 flex items-center justify-center shadow-[0_6px_22px_rgba(197,160,89,0.35),inset_0_1.5px_3px_rgba(255,255,255,0.35),inset_0_-3px_6px_rgba(0,0,0,0.85)] group-hover:scale-105 group-hover:shadow-[0_8px_30px_rgba(197,160,89,0.5),inset_0_1.5px_3px_rgba(255,255,255,0.4),inset_0_-3px_6px_rgba(0,0,0,0.85)] transition-all duration-500">
               <BrandMarkE className="w-full h-full object-contain filter drop-shadow-md" idSuffix="footer" />
             </div>
 

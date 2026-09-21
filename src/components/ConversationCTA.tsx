@@ -1,38 +1,28 @@
 import { useState, useEffect } from 'react';
-import { ArrowUpRight, Instagram, Sparkles } from 'lucide-react';
+import { ArrowUp, ArrowUpRight } from 'lucide-react';
 
 const WHATSAPP_BASE = 'https://wa.me/27680246914';
 
 const CONVERSATION_TOPICS = [
   {
     label: 'Street Couture & Nightfall',
-    isWildcard: false,
     message: "Hi Eko, I'm interested in booking a Street Couture and Nightfall session (art-directed portraiture & direct-flash nocturne).",
   },
   {
     label: 'Weddings & Celebrations',
-    isWildcard: false,
     message: "Hi Eko, I'm getting married / celebrating and would love to check your availability and discuss coverage.",
   },
   {
     label: 'Brand & Product Imagery',
-    isWildcard: false,
     message: "Hi Eko, I'm looking to collaborate on striking, purposeful Brand & Product Imagery.",
   },
   {
     label: 'Family & Little Ones',
-    isWildcard: false,
     message: "Hi Eko, I'd like to book a Family & Little Ones session to document our connection and story.",
   },
   {
     label: 'Lifestyle',
-    isWildcard: false,
     message: "Hi Eko, I'd like to book a Lifestyle shoot exploring exceptional spaces, architecture, or destinations.",
-  },
-  {
-    label: 'Outside The Frame',
-    isWildcard: true,
-    message: "Hi Eko, I have a vision outside the frame that doesn't fit into a standard category. Let's discuss bringing it to life.",
   },
 ];
 
@@ -47,7 +37,7 @@ function WhatsAppIcon({ className = 'w-5 h-5' }: { className?: string }) {
 export default function ConversationCTA() {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
 
-  // Allow external triggers (e.g. clicking Bring Your Vision on Portfolio Wildcard) to select focus
+  // Allow external triggers to select focus
   useEffect(() => {
     const handleSelectFocus = (e: Event) => {
       const customEvent = e as CustomEvent<{ topic: string }>;
@@ -69,15 +59,9 @@ export default function ConversationCTA() {
   return (
     <section
       id="booking"
-      className="relative w-full bg-[#1B263B] text-white py-24 md:py-36 px-6 md:px-12 z-10 border-t border-[#C5A059]/20"
+      className="relative w-full bg-[#111929] text-white py-24 md:py-36 px-6 md:px-12 z-10 border-t border-[#C5A059]/20"
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
-        
-        {/* Archival Registration Stamp */}
-        <div className="inline-flex items-center gap-2 font-sans text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#C5A059] border border-[#C5A059]/30 px-3 py-1.5 mb-8 bg-[#111927] shadow-sm font-semibold">
-          <span className="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse" />
-          <span>NO FORMS. JUST ACCESS.</span>
-        </div>
 
         {/* Confident Headline */}
         <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif uppercase tracking-tight text-white leading-none mb-10 sm:mb-12">
@@ -88,9 +72,9 @@ export default function ConversationCTA() {
         <div className="w-full max-w-4xl mb-10 flex flex-col items-center">
           {/* Recessed Indent Pill / Tab Header (Informational, non-CTA) */}
           <div className="p-[3px] rounded-2xl sm:rounded-full bg-[#121927] shadow-[0_6px_20px_rgba(0,0,0,0.6),inset_0_4px_12px_rgba(0,0,0,0.8),inset_0_-1px_1px_rgba(255,255,255,0.1)] border-t border-[#C5A059]/30 border-b border-black/80 mb-6 max-w-[calc(100vw-3rem)] sm:max-w-none inline-block">
-            <div className="flex items-center justify-center px-3 py-1.5 sm:px-5 sm:py-2 rounded-2xl sm:rounded-full bg-[#1B263B] shadow-[inset_0_5px_12px_rgba(0,0,0,0.6),inset_0_1px_3px_rgba(0,0,0,0.8),inset_0_-1px_2px_rgba(255,255,255,0.12)] border-t border-black/80 border-b border-white/10 select-none">
+            <div className="flex items-center justify-center px-3 py-1.5 sm:px-5 sm:py-2 rounded-2xl sm:rounded-full bg-[#111929] shadow-[inset_0_5px_12px_rgba(0,0,0,0.6),inset_0_1px_3px_rgba(0,0,0,0.8),inset_0_-1px_2px_rgba(255,255,255,0.12)] border-t border-black/80 border-b border-white/10 select-none">
               <span className="font-sans text-[8.5px] sm:text-[10px] md:text-[11px] text-[#C5A059] font-bold uppercase tracking-[0.12em] sm:tracking-[0.2em] text-center leading-normal">
-                SELECT A FOCUS TO START CHAT
+                LET'S PLAN YOUR SHOOT
               </span>
             </div>
           </div>
@@ -104,15 +88,10 @@ export default function ConversationCTA() {
                   onClick={() => setSelectedTopic(isSelected ? null : topic.label)}
                   className={`group relative font-sans text-xs uppercase tracking-widest px-4 py-2.5 border transition-all duration-300 cursor-pointer flex items-center gap-1.5 ${
                     isSelected
-                      ? 'bg-[#C5A059] text-[#1B263B] border-[#C5A059] font-extrabold shadow-[0_0_22px_rgba(197,160,89,0.4)] scale-[1.02]'
-                      : topic.isWildcard
-                      ? 'bg-[#111927] text-[#C5A059] border-[#C5A059]/60 hover:bg-[#1B263B] hover:text-white shadow-sm'
+                      ? 'bg-[#C5A059] text-[#111929] border-[#C5A059] font-extrabold shadow-[0_0_22px_rgba(197,160,89,0.4)] scale-[1.02]'
                       : 'bg-[#111927] text-white/90 border-[#C5A059]/25 hover:border-[#C5A059] hover:bg-[#162234]'
                   }`}
                 >
-                  {topic.isWildcard && (
-                    <Sparkles className={`w-3 h-3 ${isSelected ? 'text-[#1B263B]' : 'text-[#C5A059]'}`} />
-                  )}
                   <span>{topic.label}</span>
                 </button>
               );
@@ -138,7 +117,7 @@ export default function ConversationCTA() {
               target="_blank"
               rel="noopener noreferrer"
               id="main-whatsapp-conversion-btn"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#C5A059] hover:bg-[#d6b26d] text-[#1B263B] hover:text-[#111927] font-sans text-xs sm:text-sm uppercase tracking-[0.2em] font-extrabold px-8 sm:px-10 py-4 sm:py-5 border border-[#C5A059] transition-all duration-300 shadow-[0_10px_30px_rgba(197,160,89,0.3)] active:scale-[0.98] group cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#C5A059] hover:bg-[#d6b26d] text-[#111929] hover:text-white font-sans text-xs sm:text-sm uppercase tracking-[0.2em] font-extrabold px-8 sm:px-10 py-4 sm:py-5 border border-[#C5A059] transition-all duration-300 shadow-[0_10px_30px_rgba(197,160,89,0.3)] active:scale-[0.98] group cursor-pointer"
             >
               <WhatsAppIcon className="w-5 h-5 fill-current shrink-0" />
               <span>START CHAT</span>
@@ -159,22 +138,19 @@ export default function ConversationCTA() {
           )}
         </div>
 
-        {/* Micro Credibility & Social Context */}
-        <div className="mt-8 flex justify-center items-center">
-          {/* Recessed Indent Pill / Tab with Instagram Icon */}
-          <div className="p-[3px] rounded-full bg-[#121927] shadow-[0_6px_20px_rgba(0,0,0,0.6),inset_0_4px_12px_rgba(0,0,0,0.8),inset_0_-1px_1px_rgba(255,255,255,0.1)] border-t border-[#C5A059]/30 border-b border-black/80">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow eko PHTGRPHY on Instagram"
-              title="Instagram"
-              className="group relative inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2 rounded-full bg-[#1B263B] hover:bg-[#253552] shadow-[inset_0_5px_12px_rgba(0,0,0,0.6),inset_0_1px_3px_rgba(0,0,0,0.8),inset_0_-1px_2px_rgba(255,255,255,0.12)] border-t border-black/80 border-b border-white/10 transition-all duration-300 active:scale-[0.96] text-[#C5A059] hover:text-white cursor-pointer"
-            >
-              <Instagram className="w-4 h-4 stroke-[1.75]" />
-            </a>
+        {/* Upward Arrow Bouncing to Point at the Disabled Start Chat CTA */}
+        {!selectedTopic && (
+          <div className="mt-7 flex flex-col items-center justify-center animate-bounce select-none pointer-events-none">
+            <div className="p-[2.5px] rounded-full bg-[#121927] shadow-[0_6px_20px_rgba(0,0,0,0.6),inset_0_4px_12px_rgba(0,0,0,0.8),inset_0_-1px_1px_rgba(255,255,255,0.1)] border-t border-[#C5A059]/30 border-b border-black/80">
+              <div
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-[#111929] shadow-[inset_0_5px_12px_rgba(0,0,0,0.6),inset_0_1px_3px_rgba(0,0,0,0.8),inset_0_-1px_2px_rgba(255,255,255,0.12)] border-t border-black/80 border-b border-white/10 text-[#C5A059]"
+                aria-label="Select a shoot topic above to enable chat"
+              >
+                <ArrowUp className="w-5 h-5 stroke-[2.25] text-[#C5A059]" />
+              </div>
+            </div>
           </div>
-        </div>
+        )}
 
       </div>
     </section>

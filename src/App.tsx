@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <>
-      <div className="relative min-h-screen bg-[#1B263B] text-white overflow-x-hidden selection:bg-[#C5A059] selection:text-[#1B263B]">
+      <div className="relative min-h-screen bg-[#111929] text-white overflow-x-hidden selection:bg-[#C5A059] selection:text-[#111929]">
         {/* Stage 1: Arrive (Cinematic, focused Hero) */}
         <Hero
           menuOpen={menuOpen}

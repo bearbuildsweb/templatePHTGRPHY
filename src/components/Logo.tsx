@@ -24,7 +24,7 @@ export default function Logo({
   ariaLabel = 'eko PHTGRPHY Logo'
 }: LogoProps) {
   // Map variant to color classes
-  let mainColorClass = 'text-[#1B263B]';
+  let mainColorClass = 'text-[#111929]';
   let accentColorClass = 'text-[#C5A059]';
 
   if (variant === 'accent' || variant === 'orange') {
@@ -34,7 +34,7 @@ export default function Logo({
     mainColorClass = 'text-white';
     accentColorClass = 'text-[#C5A059]';
   } else if (variant === 'secondary' || variant === 'black') {
-    mainColorClass = 'text-[#1B263B]';
+    mainColorClass = 'text-[#111929]';
     accentColorClass = 'text-[#C5A059]';
   }
 
@@ -53,7 +53,7 @@ export default function Logo({
         className={`inline-flex items-center justify-center ${className}`}
         aria-label={ariaLabel}
       >
-        <span className="inline-flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full border-2 border-[#C5A059] bg-[#1B263B] shadow-[0_4px_12px_rgba(27,38,59,0.3)]">
+        <span className="inline-flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full border-2 border-[#C5A059] bg-[#111929] shadow-[0_4px_12px_rgba(17,25,41,0.3)]">
           <span className="font-serif text-sm sm:text-base font-bold lowercase text-white">e</span>
           <span className="font-sans text-[8px] font-extrabold uppercase text-[#C5A059] ml-0.5">k</span>
         </span>
